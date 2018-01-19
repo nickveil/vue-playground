@@ -4,15 +4,15 @@
     <div class="card">
       <div class="row">
         <div class="col-2">
-          <div class="image">
-            No Photo Available
+          <div>
+            <img class="image":src="img" alt="Profile" height="90" width="90">
           </div>
         </div>
         <div class="col-10">
           <div><p class="name">{{ msg }}</p></div>
-          <div class="address"><span>Address line 1.<br/>Address line 2.</span></div>
-          <div class="number"><span>(555)-555-5555</span></div>
-          <div class="email"><span>Email goes here.</span></div>
+          <div class="address"><span>{{ address1 }}<br/>{{address2}}</span></div>
+          <div class="number"><span>{{number}}</span></div>
+          <div class="email"><span>{{ email }}</span></div>
         </div>
       </div>
     </div>
@@ -24,7 +24,12 @@ export default {
   name: 'Card',
   data () {
     return {
-      msg: 'Name (First Last)'
+      msg: 'John Smith',
+      img: require('../../profile.jpeg'),
+      address1: '123 Any St',
+      address2: 'AnyTown, US 12345',
+      number: '(555)-555-555',
+      email: 'name.last@mail.com'
     }
   }
 }
@@ -42,11 +47,12 @@ export default {
 }
 .image {
   border: solid 1px #ccc;
-  height: 80px;
-  width: 70px;
-  margin: 9px 10px;
+  height: 90px;
+  width: 90px;
+  margin: 3px 10px;
   font-size: 12px;
   text-align: center;
+  border-radius: 4px;
   background-color: #eee;
 }
 .name{
@@ -54,12 +60,13 @@ export default {
   height: 18px;
   margin: 3px 20px;
   font-size: 18px;
+  font-weight: 600;
   text-align: center;
 }
 .address{
   width: 200px;
   height: 30px;
-  margin: 2px 20px;
+  margin: 4px 20px;
   font-size: 12px;
   text-align: center;
 }
@@ -68,6 +75,7 @@ export default {
   height: 14px;
   margin: 3px 20px;
   font-size: 14px;
+  font-weight: 600;
   text-align: center;
 }
 .email{
